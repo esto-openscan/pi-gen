@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenScan3 Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=openscan
+Group=openscan
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/opt/openscan3
+ExecStart=/usr/local/bin/openscan3
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+exec /usr/local/bin/uv run --project /opt/openscan3 python -m openscan "$@"
